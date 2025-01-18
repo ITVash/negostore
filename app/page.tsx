@@ -1,3 +1,4 @@
+"use client"
 import { useTelegram } from "@/shared/lib/providers"
 import { CreateUser } from "@/shared/lib/registerUser"
 import React from "react"
