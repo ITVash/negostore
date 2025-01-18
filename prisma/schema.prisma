@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+    //url = "postgres://default:kxSPa4fM8dtg@ep-lingering-thunder-a23xphs1-pooler.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require&pgbouncer=true&connect_timeout=15"
+    //directUrl = "postgres://default:kxSPa4fM8dtg@ep-lingering-thunder-a23xphs1.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require"
+}
+/*
+*PIECE //штука
+*PACKAGING //упаковка
+*COUPLE //пара
+*/
+enum UserRole {
+  ADMIN
+  BOOKKEEPER
+  USER
+  GUEST
+}
+enum StoreName {
+  NEGOCIANT
+  NOVIKOV
+}
+enum Status {
+  START
+  END
+}
+enum Unit {
+  PIECE
+  PACKAGING
+  COUPLE
+}
+model User {
+  id Int @id @default(autoincrement())
+  
+  id_tg Int
+  first_name String
+  last_name String
+  username String
+  photo_url String? @default("")
+  role UserRole
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+}
+model Category {
+  id Int @id @default(autoincrement())
+  
+  title String
+  product ProductRange[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model ProductRange {
+  id Int @id @default(autoincrement())
+  
+  article String
+  title String
+  unit Unit @default(PIECE)
+  category Category @relation(fields: [categoryID], references: [id])
+  categoryID Int
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  storeHouse StoreHouse[]
+}
+model StoreHouse {
+  id Int @id @default(autoincrement())
+  
+  storeName StoreName @default(NEGOCIANT)
+  product ProductRange @relation(fields: [productID], references: [id])
+  productID Int
+  quantity Int
+  orders Orders[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Orders {
+  id Int @id @default(autoincrement())
+
+  score Int
+  title String
+  storeHouse StoreHouse[]
+  quantity Int
+  status Status @default(START)
+
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
