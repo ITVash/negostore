@@ -35,7 +35,9 @@ export default function Home() {
 	return (
 		<Container
 			className={`text-[#ffffff] text-[${webApp?.themeParams.text_color}] flex-col max-h-screen`}>
-			{(getMe && getMe.role === "ADMIN") || (getMe && getMe.role === "USER") ? (
+			{(getMe && getMe.role === "ADMIN") ||
+			(getMe && getMe.role === "USER") ||
+			(getMe && getMe.role === "BOOKKEEPER") ? (
 				<>
 					<Header user={getMe!} />
 				</>
