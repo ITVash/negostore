@@ -5,7 +5,7 @@ import { Api } from "../services/api-client"
 export interface UserState {
 	loading: boolean
 	error: boolean
-	users: User[]
+	usersStore: User[]
 	getMe?: User
 	fetchUser: (id_tg: number) => Promise<void>
 	fetchUsersAll: () => Promise<void>
@@ -15,7 +15,7 @@ export interface UserState {
 export const useUser = create<UserState>((set) => ({
 	loading: true,
 	error: false,
-	users: [],
+	usersStore: [],
 	getMe: {} as User,
 	fetchUser: async (id_tg: number) => {
 		try {
@@ -33,7 +33,7 @@ export const useUser = create<UserState>((set) => ({
 		try {
 			set({ loading: true, error: false })
 			const data = await Api.users.getAllUsers()
-			set({ users: data })
+			set({ usersStore: data })
 		} catch (error) {
 			console.error(error)
 			set({ error: true })
@@ -48,7 +48,7 @@ export const useUser = create<UserState>((set) => ({
 			set((state) => ({
 				loading: true,
 				error: false,
-				users: state.users.map((itm) => {
+				usersStore: state.usersStore.map((itm) => {
 					if (itm.id === id) {
 						itm.role = data.role
 					}
@@ -69,7 +69,7 @@ export const useUser = create<UserState>((set) => ({
 			set((state) => ({
 				loading: true,
 				error: false,
-				users: state.users.filter((itm) => itm.id !== id),
+				usersStore: state.usersStore.filter((itm) => itm.id !== id),
 			}))
 		} catch (error) {
 			console.error(error)
