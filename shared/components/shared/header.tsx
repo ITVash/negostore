@@ -20,7 +20,13 @@ export const Header: React.FC<HeaderProps> = ({ className, user }) => {
 				className,
 			)}>
 			<Container className={cn("flex justify-between items-center")}>
-				<>{user && user.role === "ADMIN" ? <div>ADMIN</div> : <></>}</>
+				<>
+					{(user && user.role === "ADMIN") || user.role === "BOOKKEEPER" ? (
+						<div>Ты в команде!</div>
+					) : (
+						<></>
+					)}
+				</>
 				<div className='mt-2'>
 					{user && user.photo_url && (
 						<div className='flex justify-between items-center'>
