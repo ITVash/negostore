@@ -8,6 +8,7 @@ import React from "react"
 export default function Home() {
 	const { user, webApp } = useTelegram()
 	const { users, getMe, fetchUser, fetchUsersAll } = useUser()
+
 	React.useEffect(() => {
 		fetchUsersAll()
 		console.log(users)
