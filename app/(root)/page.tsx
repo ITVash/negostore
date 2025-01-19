@@ -1,5 +1,5 @@
 "use client"
-import { Container } from "@/shared/components/shared"
+import { Container, Header, NotAccess } from "@/shared/components/shared"
 import { useTelegram } from "@/shared/lib/providers"
 import { CreateUser } from "@/shared/lib/registerUser"
 import { useUser } from "@/shared/store"
@@ -33,9 +33,12 @@ export default function Home() {
 	return (
 		<Container
 			className={`text-[#ffffff] text-[${webApp?.themeParams.text_color}] flex-col max-h-screen`}>
-			{getMe!.role === "ADMIN" && <div>ADMIN</div>}
-			{getMe!.role === "USER" && <div>USER</div>}
-			{getMe!.role === "GUEST" && <div>GUEST</div>}
+			(getMe && getMe.role === "ADMIN") || (getMe && getMe.role === "USER") ? (
+			<>
+				<Header user={getMe!} />
+			</>
+			) : (
+			<NotAccess />)
 		</Container>
 	)
 }
