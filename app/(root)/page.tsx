@@ -1,9 +1,9 @@
 "use client"
+import React from "react"
 import { Container, Header, NotAccess } from "@/shared/components/shared"
 import { useTelegram } from "@/shared/lib/providers"
 import { CreateUser } from "@/shared/lib/registerUser"
 import { useUser } from "@/shared/store"
-import React from "react"
 
 export default function Home() {
 	const { user, webApp } = useTelegram()
@@ -35,12 +35,13 @@ export default function Home() {
 	return (
 		<Container
 			className={`text-[#ffffff] text-[${webApp?.themeParams.text_color}] flex-col max-h-screen`}>
-			(getMe && getMe.role === "ADMIN") || (getMe && getMe.role === "USER") ? (
-			<>
-				<Header user={getMe!} />
-			</>
+			{(getMe && getMe.role === "ADMIN") || (getMe && getMe.role === "USER") ? (
+				<>
+					<Header user={getMe!} />
+				</>
 			) : (
-			<NotAccess />)
+				<NotAccess />
+			)}
 		</Container>
 	)
 }
