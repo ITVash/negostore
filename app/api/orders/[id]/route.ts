@@ -31,7 +31,7 @@ export async function GET(
 }
 export async function PATCH(
 	req: NextRequest,
-	{ params }: { params: { id: String } },
+	{ params }: { params: { id: string } },
 ) {
 	try {
 		const id = Number(params.id)
