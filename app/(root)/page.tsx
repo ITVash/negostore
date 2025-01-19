@@ -35,6 +35,7 @@ export default function Home() {
 			className={`text-[#ffffff] text-[${webApp?.themeParams.text_color}] flex-col max-h-screen`}>
 			{getMe!.role === "ADMIN" && <div>ADMIN</div>}
 			{getMe!.role === "USER" && <div>USER</div>}
+			{getMe!.role === "GUEST" && <div>GUEST</div>}
 		</Container>
 	)
 }
