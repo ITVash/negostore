@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 export async function GET(
 	__: NextRequest,
-	{ params }: { params: { id?: String } },
+	{ params }: { params: { id: String } },
 ) {
 	try {
 		const id = Number(params.id)
