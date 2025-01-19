@@ -7,16 +7,16 @@ import React from "react"
 
 export default function Home() {
 	const { user, webApp } = useTelegram()
-	const { users, getMe, fetchUser, fetchUsersAll } = useUser()
+	const { usersStore, getMe, fetchUser, fetchUsersAll } = useUser()
 
 	React.useEffect(() => {
 		fetchUsersAll()
-		console.log(users)
+		console.log(usersStore)
 	}, [])
 
 	React.useEffect(() => {
 		if (user) {
-			const userCreate = users.filter((item) => item.id_tg === user?.id)[0]
+			const userCreate = usersStore.filter((item) => item.id_tg === user?.id)[0]
 			if (!userCreate) {
 				CreateUser(user)
 			}
