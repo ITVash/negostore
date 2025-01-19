@@ -10,6 +10,7 @@ export default function Home() {
 	const { users, getMe, fetchUser, fetchUsersAll } = useUser()
 	React.useEffect(() => {
 		fetchUsersAll()
+		console.log(users)
 	}, [])
 
 	React.useEffect(() => {
@@ -27,7 +28,7 @@ export default function Home() {
 			webApp!.BackButton.isVisible = false
 		}
 	}, [])
-	if (!webApp || !users || !getMe!.role) {
+	if (!webApp || !user || !getMe!.role) {
 		return <div>Загрузка...</div>
 	}
 	return (
