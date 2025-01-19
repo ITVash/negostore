@@ -1,5 +1,5 @@
 import { prisma } from "@/prisma/prisma-client"
-import { StoreHouse, StoreName } from "@prisma/client"
+import { StoreHouse } from "@prisma/client"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function GET(
