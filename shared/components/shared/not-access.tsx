@@ -1,3 +1,4 @@
+"use client"
 import { cn } from "@/shared/lib/utils"
 import { ShieldAlert } from "lucide-react"
 import React from "react"
