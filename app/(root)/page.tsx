@@ -33,7 +33,9 @@ export default function Home() {
 	return (
 		<Container
 			className={`text-[#ffffff] text-[${webApp?.themeParams.text_color}] flex-col max-h-screen`}>
-			привет
+			{getMe!.role === "ADMIN" && <div>ADMIN</div>}
+			{getMe!.role === "USER" && <div>USER</div>}
 		</Container>
 	)
 }
+
