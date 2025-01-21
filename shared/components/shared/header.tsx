@@ -7,6 +7,7 @@ import { Container } from "@/shared/components/shared"
 import { Button } from "@/shared/components/ui/button"
 import { Menu } from "lucide-react"
 import { User } from "@prisma/client"
+import Link from "next/link"
 interface HeaderProps {
 	className?: string
 	user: User
@@ -22,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ className, user }) => {
 			<Container className={cn("flex justify-between items-center")}>
 				<>
 					{(user && user.role === "ADMIN") || user.role === "BOOKKEEPER" ? (
-						<div>Ты в команде!</div>
+						<Link href={"/users"}>Пользователи</Link>
 					) : (
 						<></>
 					)}

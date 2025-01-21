@@ -51,7 +51,7 @@ model Category {
   id Int @id @default(autoincrement())
   
   title String
-  product ProductRange[]
+  product StoreHouse[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -61,9 +61,7 @@ model ProductRange {
   
   article String?
   title String
-  unit Unit @default(PIECE)
-  category Category @relation(fields: [categoryID], references: [id])
-  categoryID Int
+  
   
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -86,8 +84,11 @@ model StoreHouse {
   storeID Int
   product ProductRange @relation(fields: [productID], references: [id])
   productID Int
+  unit Unit @default(PIECE)
   quantity Int  @default(0)
   orders Orders[]
+  category Category @relation(fields: [categoryID], references: [id])
+  categoryID Int
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

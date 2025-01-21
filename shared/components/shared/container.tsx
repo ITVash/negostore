@@ -12,7 +12,7 @@ export const Container: React.FC<React.PropsWithChildren<ContainerProps>> = ({
 }) => {
 	const { webApp } = useTelegram()
 	if (!webApp) {
-		return <div>Загрузка...</div>
+		return <div>Загрузка компонента...</div>
 	}
 	return (
 		<div
