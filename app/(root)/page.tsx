@@ -12,16 +12,16 @@ import { useUser } from "@/shared/store"
 
 export default function Home() {
 	const { user, webApp } = useTelegram()
-	const { usersStore, getMe, fetchUser, fetchUsersAll } = useUser()
+	const { users, getMe, fetchUser, fetchUsersAll } = useUser()
 
 	React.useEffect(() => {
 		fetchUsersAll()
-		console.log(usersStore)
+		console.log(users)
 	}, [])
 
 	React.useEffect(() => {
 		if (user) {
-			const userCreate = usersStore.filter((item) => item.id_tg === user?.id)[0]
+			const userCreate = users.filter((item) => item.id_tg === user?.id)[0]
 			if (!userCreate) {
 				CreateUser(user)
 			}

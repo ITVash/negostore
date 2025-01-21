@@ -13,7 +13,7 @@ import { useToast } from "@/shared/hooks/use-toast"
 import { useTelegram } from "@/shared/lib/providers"
 import { cn } from "@/shared/lib/utils"
 import { useUser } from "@/shared/store"
-import { negoUserRole } from "@prisma/client"
+import { UserRole } from "@prisma/client"
 import { useRouter } from "next/navigation"
 import React from "react"
 
@@ -21,15 +21,16 @@ export default function EditUsers() {
 	const { toast } = useToast()
 	const { webApp } = useTelegram()
 	const router = useRouter()
-	const { items, fetchEditUser, fetchUsersAll } = useUser()
+	const { users, fetchEditUser, fetchUsersAll } = useUser()
 	const onChangeHandle = async (
 		id: number,
 		value: React.ChangeEvent<HTMLSelectElement>,
 	) => {
 		const role = value.target.value
-		if (role === "USER") await fetchEditUser(id, negoUserRole.USER)
-		if (role === "ADMIN") await fetchEditUser(id, negoUserRole.ADMIN)
-		if (role === "GUEST") await fetchEditUser(id, negoUserRole.GUEST)
+		if (role === "USER") await fetchEditUser(id, UserRole.USER)
+		if (role === "ADMIN") await fetchEditUser(id, UserRole.ADMIN)
+		if (role === "GUEST") await fetchEditUser(id, UserRole.GUEST)
+		if (role === "BOOKKEEPER") await fetchEditUser(id, UserRole.BOOKKEEPER)
 		toast({ description: "Права пользователя изменены!" })
 	}
 	React.useEffect(() => {
@@ -51,7 +52,7 @@ export default function EditUsers() {
 			}
 		}
 	}, [])
-	if (!webApp && !items) {
+	if (!webApp && !users) {
 		return <Loading />
 	}
 	return (
@@ -69,7 +70,7 @@ export default function EditUsers() {
 					</TableRow>
 				</TableHeader>
 				<TableBody>
-					{items.map((item, id) => (
+					{users.map((item, id) => (
 						<TableRow key={item.username + id}>
 							<TableCell>{item.first_name}</TableCell>
 							<TableCell>{item.last_name}</TableCell>
@@ -81,13 +82,16 @@ export default function EditUsers() {
 									}]`}
 									defaultValue={item.role}>
 									<option key={item.id + "ADMIN"} value='ADMIN'>
-										ADMIN
+										Админ
+									</option>
+									<option key={item.id + "BOOKKEEPER"} value='BOOKKEEPER'>
+										Бухгалтер
 									</option>
 									<option key={item.id + "USER"} value='USER'>
-										USER
+										Пользователь
 									</option>
 									<option key={item.id + "GUEST"} value='GUEST'>
-										GUEST
+										Гость
 									</option>
 								</select>
 							</TableCell>
