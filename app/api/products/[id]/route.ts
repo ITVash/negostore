@@ -10,10 +10,6 @@ export async function GET(
 		const id = Number(params.id)
 		const product = await prisma.productRange.findFirst({
 			where: { id: id },
-			include: {
-				category: true,
-				storeHouse: true,
-			},
 		})
 		if (!product)
 			return NextResponse.json(

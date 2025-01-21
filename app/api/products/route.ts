@@ -4,12 +4,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 export async function GET() {
 	try {
-		const products = await prisma.productRange.findMany({
-			include: {
-				category: true,
-				storeHouse: true,
-			},
-		})
+		const products = await prisma.productRange.findMany({})
 		if (!products)
 			return NextResponse.json({ message: "Нет ни одного товара!" })
 		return NextResponse.json(products)
