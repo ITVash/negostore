@@ -1,6 +1,11 @@
 "use client"
 import React from "react"
-import { Container, Header, NotAccess } from "@/shared/components/shared"
+import {
+	Container,
+	Header,
+	Loading,
+	NotAccess,
+} from "@/shared/components/shared"
 import { useTelegram } from "@/shared/lib/providers"
 import { CreateUser } from "@/shared/lib/registerUser"
 import { useUser } from "@/shared/store"
@@ -30,7 +35,7 @@ export default function Home() {
 		}
 	}, [])
 	if (!webApp || !user || !getMe!.role) {
-		return <div>Загрузка...</div>
+		return <Loading />
 	}
 	return (
 		<Container

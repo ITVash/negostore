@@ -1,3 +1,5 @@
 export * from "./container"
 export * from "./header"
+export * from "./loading"
+export * from "./loading-content"
 export { NotAccess } from "./not-access"
