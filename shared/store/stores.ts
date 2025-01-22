@@ -1,12 +1,12 @@
 import { create } from "zustand"
-import { StoreDTO } from "../services/dto/stores.dto"
+import { StoreDTO, StoreNameDTO } from "../services/dto/stores.dto"
 import { Api } from "../services/api-client"
 import { Store } from "@prisma/client"
 
 export interface StoreState {
 	loading: boolean
 	error: boolean
-	storeName: Store
+	storeName: StoreNameDTO
 	stores: StoreDTO[]
 	store: StoreDTO
 	fetchStoreName: (id: number) => Promise<void>
