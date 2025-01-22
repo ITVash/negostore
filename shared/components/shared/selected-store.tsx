@@ -18,15 +18,8 @@ export const SelectStore: React.FC<ISelectStoreProps> = ({
 	return (
 		<Container className={cn("items-center justify-center h-screen")}>
 			<h4>С каким складом работаем?</h4>
-			<Button
-				className={cn(
-					`bg-[#${webApp && webApp.themeParams.button_color}], mb-4`,
-				)}>
-				ИП Новиков
-			</Button>
-			<Button className={cn(`bg-[${webApp.themeParams.button_color}], mb-4`)}>
-				ТД Негоциант
-			</Button>
+			<Button className={cn(` mb-4 mt-4`)}>ИП Новиков</Button>
+			<Button className={cn(`mb-4`)}>ТД Негоциант</Button>
 		</Container>
 	)
 }
