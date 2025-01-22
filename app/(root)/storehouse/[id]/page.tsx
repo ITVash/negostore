@@ -6,6 +6,6 @@ interface IStoreProps {
 	params: { id: string }
 }
 
-export const Store: React.FC<IStoreProps> = ({ className, params }) => {
+export const StoreDetail: React.FC<IStoreProps> = ({ className, params }) => {
 	return <div className={cn("", className)}>Store {params.id}</div>
 }

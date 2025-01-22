@@ -21,7 +21,7 @@ export const SelectStore: React.FC<ISelectStoreProps> = ({
 	const router = useRouter()
 	const handleClick = (id: number) => {
 		fetchStoreName(id)
-		router.push("/store/" + id)
+		router.push("/storehouse/" + id)
 	}
 	if (!webApp) return <Loading />
 	return (
