@@ -20,7 +20,7 @@ export const SelectStore: React.FC<ISelectStoreProps> = ({
 			<h4>С каким складом работаем?</h4>
 			<Button
 				className={cn(
-					`bg-[${webApp && webApp.themeParams.button_color}] bg-sky-700, mb-4`,
+					`bg-[#${webApp && webApp.themeParams.button_color}], mb-4`,
 				)}>
 				ИП Новиков
 			</Button>
