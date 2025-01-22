@@ -5,6 +5,7 @@ import {
 	Header,
 	Loading,
 	NotAccess,
+	SelectStore,
 } from "@/shared/components/shared"
 import { useTelegram } from "@/shared/lib/providers"
 import { CreateUser } from "@/shared/lib/registerUser"
@@ -45,6 +46,7 @@ export default function Home() {
 			(getMe && getMe.role === "BOOKKEEPER") ? (
 				<>
 					<Header user={getMe!} />
+					<SelectStore />
 				</>
 			) : (
 				<NotAccess />
