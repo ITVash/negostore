@@ -46,7 +46,7 @@ export default function Home() {
 			(getMe && getMe.role === "BOOKKEEPER") ? (
 				<>
 					<Header user={getMe!} />
-					<SelectStore />
+					<SelectStore webApp={webApp} />
 				</>
 			) : (
 				<NotAccess />
