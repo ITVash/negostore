@@ -1,3 +1,4 @@
+"use client"
 import { Container, Loading } from "@/shared/components/shared"
 import { useTelegram } from "@/shared/lib/providers"
 import { cn } from "@/shared/lib/utils"
