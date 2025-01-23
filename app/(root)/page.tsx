@@ -24,8 +24,7 @@ export default function Home() {
 	React.useEffect(() => {
 		if (user) {
 			const userCreate = users.filter((item) => item.id_tg === user?.id)[0]
-			if (!userCreate) {
-				console.log("user", userCreate)
+			if (!userCreate || userCreate.role === "GUEST") {
 				CreateUser(user)
 				router.push("/not-access")
 			}
