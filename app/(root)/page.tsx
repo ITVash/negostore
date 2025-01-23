@@ -24,10 +24,12 @@ export default function Home() {
 	React.useEffect(() => {
 		if (user) {
 			const userCreate = users.filter((item) => item.id_tg === user?.id)[0]
-			if (!userCreate || userCreate.role === "GUEST") {
+			if (!userCreate) {
 				CreateUser(user)
-				router.push("/not-access")
+				//router.push("/not-access")
 			}
+			const redirect = users.filter((item) => item.id_tg === user.id)
+			if (redirect.length <= 0) router.push("/not-access")
 			fetchUser(user.id)
 		}
 		//fetchUser(454135208)
