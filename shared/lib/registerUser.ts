@@ -1,10 +1,8 @@
 "use server"
 import { prisma } from "@/prisma/prisma-client"
 import { ITelegramUser } from "../@types"
-import { useRouter } from "next/navigation"
 
 export const CreateUser = async (user: ITelegramUser) => {
-	const router = useRouter()
 	try {
 		if (user) {
 			const manyUserTG = await prisma.user.findFirst({
@@ -25,7 +23,6 @@ export const CreateUser = async (user: ITelegramUser) => {
 						role: "GUEST",
 					},
 				})
-				router.push("/not-access")
 				return data
 			}
 		}
