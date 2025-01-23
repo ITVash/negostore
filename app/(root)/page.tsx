@@ -22,7 +22,7 @@ export default function Home() {
 	}, [])
 	const redirect = users.filter((item) => item.id_tg === user?.id)[0]
 	React.useEffect(() => {
-		if (!redirect) router.push("/not-access")
+		if (redirect) router.push("/not-access")
 	}, [redirect])
 	React.useEffect(() => {
 		if (user) {
