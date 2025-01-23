@@ -25,9 +25,10 @@ export default function Home() {
 		if (user) {
 			const userCreate = users.filter((item) => item.id_tg === user?.id)[0]
 			if (!userCreate) {
+				console.log("user", userCreate)
 				CreateUser(user)
+				router.push("/not-access")
 			}
-			!userCreate && router.push("/not-access")
 			fetchUser(user.id)
 		}
 		//fetchUser(454135208)
