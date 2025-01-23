@@ -29,7 +29,7 @@ export default function Home() {
 				//router.push("/not-access")
 			}
 			const redirect = users.filter((item) => item.id_tg === user.id)
-			if (redirect.length <= 0) router.push("/not-access")
+			//if (redirect.length <= 0) router.push("/not-access")
 			fetchUser(user.id)
 		}
 		//fetchUser(454135208)
