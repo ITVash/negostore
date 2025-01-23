@@ -10,12 +10,12 @@ import {
 import { useTelegram } from "@/shared/lib/providers"
 import { CreateUser } from "@/shared/lib/registerUser"
 import { useUser } from "@/shared/store"
-import { useRouter } from "next/navigation"
+//import { useRouter } from "next/navigation"
 
 export default function Home() {
 	const { user, webApp } = useTelegram()
 	const { users, getMe, fetchUser, fetchUsersAll } = useUser()
-	const router = useRouter()
+	//const router = useRouter()
 
 	React.useEffect(() => {
 		fetchUsersAll()
