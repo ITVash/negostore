@@ -37,7 +37,7 @@ export default function StoreDetail({
 			}
 		}
 	}, [])
-	if (!webApp) {
+	if (!webApp || !storeName) {
 		return <Loading />
 	}
 	return (
