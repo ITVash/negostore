@@ -5,7 +5,7 @@ import { Container } from "./container"
 import { Button } from "../ui/button"
 import { IWebApp } from "@/shared/@types"
 import { Loading } from "./loading"
-import { useStore } from "@/shared/store"
+//import { useStore } from "@/shared/store"
 import { useRouter } from "next/navigation"
 
 interface ISelectStoreProps {
@@ -17,10 +17,10 @@ export const SelectStore: React.FC<ISelectStoreProps> = ({
 	className,
 	webApp,
 }) => {
-	const { fetchStoreName } = useStore()
+	//const { fetchStoreName } = useStore()
 	const router = useRouter()
 	const handleClick = (id: number) => {
-		fetchStoreName(id)
+		//fetchStoreName(id)
 		router.push("/storehouse 	/" + id)
 	}
 	if (!webApp) return <Loading />
