@@ -18,12 +18,12 @@ export default function StoreDetail({
 	params: { id: string }
 }) {
 	const { webApp } = useTelegram()
-	const { fetchStoreName, storeName } = useStore()
+	const { storeName } = useStore()
 	const router = useRouter()
 
-	React.useEffect(() => {
+	/* React.useEffect(() => {
 		fetchStoreName(Number(id))
-	}, [])
+	}, []) */
 	React.useEffect(() => {
 		if (webApp) {
 			webApp.BackButton.isVisible = true
