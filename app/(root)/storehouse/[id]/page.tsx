@@ -8,7 +8,7 @@ import {
 } from "@/shared/components/ui/tabs"
 import { useTelegram } from "@/shared/lib/providers"
 import { cn } from "@/shared/lib/utils"
-import { useStore } from "@/shared/store"
+//import { useStore } from "@/shared/store"
 import { useRouter } from "next/navigation"
 import React from "react"
 
@@ -18,7 +18,7 @@ export default function StoreDetail({
 	params: { id: string }
 }) {
 	const { webApp } = useTelegram()
-	const { storeName } = useStore()
+	//const { storeName } = useStore()
 	const router = useRouter()
 
 	/* React.useEffect(() => {
@@ -37,7 +37,7 @@ export default function StoreDetail({
 			}
 		}
 	}, [])
-	if (!webApp || !storeName) {
+	if (!webApp) {
 		return <Loading />
 	}
 	return (
