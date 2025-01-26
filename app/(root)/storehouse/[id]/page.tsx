@@ -48,7 +48,7 @@ export default function StoreDetail({
 					<TabsTrigger value='stores'>Склад</TabsTrigger>
 				</TabsList>
 				<TabsContent value='orders'>Счета покупателей</TabsContent>
-				<TabsContent value='stores'>Склад</TabsContent>
+				<TabsContent value='stores'>Склад {id}</TabsContent>
 			</Tabs>
 		</Container>
 	)
