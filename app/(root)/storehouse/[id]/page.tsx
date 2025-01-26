@@ -47,7 +47,10 @@ export default function StoreDetail({
 				className={cn(
 					`text-[${webApp.themeParams.text_color}] bg-[${webApp.themeParams.bg_color}]`,
 				)}>
-				<TabsList className='grid w-full grid-cols-2'>
+				<TabsList
+					className={cn(
+						`text-[${webApp.themeParams.text_color}] bg-[${webApp.themeParams.bg_color}] grid w-full grid-cols-2`,
+					)}>
 					<TabsTrigger value='orders'>Счета Покупателей</TabsTrigger>
 					<TabsTrigger value='stores'>Склад</TabsTrigger>
 				</TabsList>
