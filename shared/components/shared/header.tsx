@@ -23,7 +23,11 @@ export const Header: React.FC<HeaderProps> = ({ className, user }) => {
 			<Container className={cn("flex justify-between items-center")}>
 				<>
 					{(user && user.role === "ADMIN") || user.role === "BOOKKEEPER" ? (
-						<Link href={"/users"}>Пользователи</Link>
+						<Link
+							href={"/users"}
+							className='text-[#3390ec] hover:text-[#3390ec]/90 hover:uppercase'>
+							Пользователи
+						</Link>
 					) : (
 						<></>
 					)}
