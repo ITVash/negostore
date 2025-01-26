@@ -42,7 +42,11 @@ export default function StoreDetail({
 	}
 	return (
 		<Container className={cn(`text-[${webApp.themeParams.text_color}]`)}>
-			<Tabs defaultValue='orders'>
+			<Tabs
+				defaultValue='orders'
+				className={cn(
+					`text-[${webApp.themeParams.text_color}] bg-[${webApp.themeParams.bg_color}]`,
+				)}>
 				<TabsList className='grid w-full grid-cols-2'>
 					<TabsTrigger value='orders'>Счета Покупателей</TabsTrigger>
 					<TabsTrigger value='stores'>Склад</TabsTrigger>
