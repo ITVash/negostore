@@ -1,11 +1,11 @@
 "use client"
 import { Container, Loading } from "@/shared/components/shared"
-import {
+/* import {
 	Tabs,
 	TabsContent,
 	TabsList,
 	TabsTrigger,
-} from "@/shared/components/ui/tabs"
+} from "@/shared/components/ui/tabs" */
 import { useTelegram } from "@/shared/lib/providers"
 import { cn } from "@/shared/lib/utils"
 //import { useStore } from "@/shared/store"
@@ -42,14 +42,15 @@ export default function StoreDetail({
 	}
 	return (
 		<Container className={cn(`text-[${webApp.themeParams.text_color}]`)}>
-			<Tabs defaultValue='orders'>
+			Store {id}
+			{/* <Tabs defaultValue='orders'>
 				<TabsList className='grid w-full grid-cols-2'>
 					<TabsTrigger value='orders'>Счета Покупателей</TabsTrigger>
 					<TabsTrigger value='stores'>Склад</TabsTrigger>
 				</TabsList>
 				<TabsContent value='orders'>Счета покупателей</TabsContent>
 				<TabsContent value='stores'>Склад {id}</TabsContent>
-			</Tabs>
+			</Tabs> */}
 		</Container>
 	)
 }
