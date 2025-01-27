@@ -1,5 +1,6 @@
 "use client"
 import { Container, Loading } from "@/shared/components/shared"
+import { Button } from "@/shared/components/ui/button"
 import {
 	Tabs,
 	TabsContent,
@@ -54,8 +55,13 @@ export default function StoreDetail({
 					<TabsTrigger value='orders'>Счета Покупателей</TabsTrigger>
 					<TabsTrigger value='stores'>Склад</TabsTrigger>
 				</TabsList>
-				<TabsContent value='orders'>Счета покупателей</TabsContent>
-				<TabsContent value='stores'>Склад {id}</TabsContent>
+				<TabsContent value='orders'>
+					Счета покупателей в разработке!!!
+				</TabsContent>
+				<TabsContent value='stores'>
+					<Button>Внести товар на склад</Button>
+					<Button>Приход товара</Button>
+				</TabsContent>
 			</Tabs>
 		</Container>
 	)
