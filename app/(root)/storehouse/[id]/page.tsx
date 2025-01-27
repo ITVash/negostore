@@ -82,7 +82,7 @@ export default function StoreDetail({
 						<Input
 							type='text'
 							className='w-full pl-6 pr-6'
-							placeholder='Название организации...'
+							placeholder='Артикул или название товара ...'
 							value={searchInput}
 							onChange={searchHadler}
 						/>
