@@ -20,12 +20,12 @@ export const Header: React.FC<HeaderProps> = ({ className, user }) => {
 				"h-12 -mx-5 border-b-sky-900 border-b border-solid mt-2 mb-2",
 				className,
 			)}>
-			<Container className={cn("flex justify-between items-center")}>
+			<Container className={cn("flex flex-row justify-between items-center")}>
 				<>
-					{(user && user.role === "ADMIN") || user.role === "BOOKKEEPER" ? (
+					{user && user.role === "ADMIN" ? (
 						<Link
 							href={"/users"}
-							className='text-[#3390ec] hover:text-[#3390ec]/90 hover:uppercase'>
+							className='text-[#3390ec] hover:text-[#3390ec]/90 hover:decoration-solid'>
 							Пользователи
 						</Link>
 					) : (
