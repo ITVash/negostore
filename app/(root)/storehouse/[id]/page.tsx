@@ -69,7 +69,7 @@ export default function StoreDetail({
 				<TabsContent value='orders'>
 					Счета покупателей в разработке!!!
 				</TabsContent>
-				<TabsContent value='stores' className='flex justify-center'>
+				<TabsContent value='stores' className='flex flex-col justify-center'>
 					<div className='flex justify-between mt-3'>
 						<Button>Добавить товар</Button>
 						<Button>Приход товара</Button>
