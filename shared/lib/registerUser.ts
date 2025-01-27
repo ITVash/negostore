@@ -23,6 +23,7 @@ export const CreateUser = async (user: ITelegramUser) => {
 						role: "GUEST",
 					},
 				})
+
 				return data
 			}
 		}
