@@ -59,8 +59,10 @@ export default function StoreDetail({
 					Счета покупателей в разработке!!!
 				</TabsContent>
 				<TabsContent value='stores'>
-					<Button>Внести товар на склад</Button>
-					<Button>Приход товара</Button>
+					<div className='flex justify-between'>
+						<Button>Добавить товар</Button>
+						<Button>Приход товара</Button>
+					</div>
 				</TabsContent>
 			</Tabs>
 		</Container>

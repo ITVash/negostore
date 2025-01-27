@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ className, user }) => {
 					{user && user.role === "ADMIN" ? (
 						<Link
 							href={"/users"}
-							className='text-[#3390ec] hover:text-[#3390ec]/90 hover:decoration-solid'>
+							className='text-[#3390ec] hover:text-[#3390ec]/90 hover:underline'>
 							Пользователи
 						</Link>
 					) : (
