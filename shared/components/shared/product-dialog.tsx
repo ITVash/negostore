@@ -24,10 +24,10 @@ export const ProductDialog: React.FC<
 		return <Loading />
 	}
 	return (
-		<Container className={cn(`text-[#FFFFFF] p-4`, className)}>
+		<Container className={cn(`text-[#FFFFFF]`, className)}>
 			<Dialog>
 				<DialogTrigger>{children}</DialogTrigger>
-				<DialogContent className='bg-gray-100 mx-4 my-4'>
+				<DialogContent className='bg-gray-100 mx-4 my-4 w-full'>
 					<DialogHeader>Товар</DialogHeader>а тут уже само окно
 					<DialogFooter>
 						<Button>Сохранить</Button>
