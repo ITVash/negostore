@@ -71,7 +71,9 @@ export default function StoreDetail({
 				</TabsContent>
 				<TabsContent value='stores' className='flex flex-col justify-center'>
 					<div className='flex justify-between mt-3'>
-						<Button>Добавить товар</Button>
+						<ProductDialog>
+							<Button>Добавить товар</Button>
+						</ProductDialog>
 						<Button>Приход товара</Button>
 					</div>
 					<div className={cn("flex w-full relative items-center mt-4 mb-2")}>
