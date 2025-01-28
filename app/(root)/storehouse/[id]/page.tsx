@@ -1,5 +1,5 @@
 "use client"
-import { Container, Loading } from "@/shared/components/shared"
+import { Container, Loading, ProductDialog } from "@/shared/components/shared"
 import { Button } from "@/shared/components/ui/button"
 import { Input } from "@/shared/components/ui/input"
 import {
