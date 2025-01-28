@@ -26,7 +26,7 @@ export const ProductDialog: React.FC<
 	return (
 		<Container className={cn(`text-[#FFFFFF]`, className)}>
 			<Dialog>
-				<DialogTrigger>{children}</DialogTrigger>
+				<DialogTrigger asChild>{children}</DialogTrigger>
 				<DialogContent className='bg-gray-100 w-full h-full'>
 					<DialogHeader>Товар</DialogHeader>а тут уже само окно
 					<DialogFooter>
