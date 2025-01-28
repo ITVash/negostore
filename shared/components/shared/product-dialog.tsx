@@ -2,6 +2,7 @@ import { cn } from "@/shared/lib/utils"
 import React from "react"
 import {
 	Dialog,
+	DialogClose,
 	DialogContent,
 	DialogFooter,
 	DialogHeader,
@@ -30,7 +31,9 @@ export const ProductDialog: React.FC<
 				<DialogContent className='bg-gray-100 w-full h-full'>
 					<DialogHeader>Товар</DialogHeader>а тут уже само окно
 					<DialogFooter>
-						<Button>Сохранить</Button>
+						<DialogClose asChild>
+							<Button>Сохранить</Button>
+						</DialogClose>
 					</DialogFooter>
 				</DialogContent>
 			</Dialog>
