@@ -8,6 +8,9 @@ import {
 	DialogTrigger,
 } from "../ui/dialog"
 import { Button } from "../ui/button"
+import { Container } from "./container"
+import { Loading } from "./loading"
+import { useTelegram } from "@/shared/lib/providers"
 
 interface IProductDialogProps {
 	className?: string
@@ -16,8 +19,13 @@ interface IProductDialogProps {
 export const ProductDialog: React.FC<
 	React.PropsWithChildren<IProductDialogProps>
 > = ({ children, className }) => {
+	const { webApp } = useTelegram()
+	if (!webApp) {
+		return <Loading />
+	}
 	return (
-		<div className={cn("", className)}>
+		<Container
+			className={cn(`text-[${webApp.themeParams.text_color}]`, className)}>
 			<Dialog>
 				<DialogTrigger>{children}</DialogTrigger>
 				<DialogContent>
@@ -27,6 +35,6 @@ export const ProductDialog: React.FC<
 					</DialogFooter>
 				</DialogContent>
 			</Dialog>
-		</div>
+		</Container>
 	)
 }
